@@ -1,0 +1,18 @@
+$headerBgColor: #8290A8;
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    padding: 15px;
+
+    .btn_group {
+        display: flex;
+    }
+
+}

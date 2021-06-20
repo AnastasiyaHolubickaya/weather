@@ -1,0 +1,13 @@
+$fontFamily: Circe, sans-serif;
+$fontColor: #24242E;
+
+* {
+    margin: 0;
+}
+
+.app {
+    width: 100%;
+    height: 100vh;
+    font-family: $fontFamily;
+}
+

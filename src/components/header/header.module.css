@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  padding: 15px;
+}
+.header .btn_group {
+  display: flex;
+}
+
+/*# sourceMappingURL=header.module.css.map */
