@@ -1,0 +1,16 @@
+{
+  "en": {
+    "translation": {
+      "currently_date": "Currently date",
+      "unit": "m/s",
+      "btn_change_bg": "refresh",
+      "placeholder": "Enter city",
+      "btn_search": "Search",
+      "btn_en": "En",
+      "btn_ru": "Ru",
+      "wind": "Wind of",
+      "feels": "Feels like",
+      "mess_novalid": "Only Latin and Cyrillic letters are allowed to be entered"
+    }
+  }
+}

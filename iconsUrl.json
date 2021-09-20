@@ -1,0 +1,20 @@
+{
+  "01d": "day_clear.svg",
+  "02d": "day_partial_cloud.svg",
+  "03d": "cloudy.svg",
+  "04d": "angry_clouds.svg",
+  "09d": "rain.svg",
+  "10d": "day_rain.svg",
+  "11d": "rain_thunder.svg",
+  "13d": "snow.svg",
+  "50d": "mist.svg",
+  "01n": "night_half_moon_clear.svg",
+  "02n": "night_half_moon_partial_cloud.svg",
+  "03n": "cloudy.svg",
+  "04n": "angry_clouds.svg",
+  "09n": "rain.svg",
+  "10n": "night_half_moon_rain.svg",
+  "11n": "rain_thunder.svg",
+  "13n": "snow.svg",
+  "50n": "mist.svg"
+}
