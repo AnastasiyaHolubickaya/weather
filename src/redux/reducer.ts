@@ -1,47 +1,32 @@
-import {InferActionType} from "./store";
+import {ActionsType} from "./actionCreator";
 
 
 let initialState = {
+    celsius: true,
+    languageApp: "en",
     dataWeather: {
-        coord: {lat: 0, lon: 0},
+        coordinates: {latitude: 0, longitude: 0},
         country: '',
+        countryRu: '',
         cityName: '',
         timezone: 0,
-        weatherList: [{
-            clouds: {},
-            dt_txt: '',
-            visibility: 0,
-            main: {
-                feels_like: 0,
-                humidity: 0,
-                pressure: 0,
-                temp: 0,
-                temp_max: 0,
-                temp_min: 0
-            },
-            weather: [{
-                description: '',
-                icon: '',
-                id: 0,
-                main: ''
-            }],
-            wind: {
-                deg: 0,
-                gust: 0,
-                speed: 0
-            }
-        }]
+        sunrise: '',
+        sunset: '',
+        weatherList: [],
     },
     messageError: '',
     coordUserLocation: {
         lat: 0,
         lon: 0
     },
-    currentData: '',
-    inicialization: false
+    currentData: {
+        en: '',
+        ru: ''
+    },
+    inicialization: false,
+    bgImgs: ["P1018313.jpg", "P1019640.jpg", "P1019641.jpg", "IMGP3552.JPG", "IMGP3539.JPG"]
 };
 export type initialStateType = typeof initialState;
-export type ActionsType = InferActionType<typeof actions>;
 
 
 const reducer = (state = initialState, action: ActionsType): initialStateType => {
@@ -68,20 +53,19 @@ const reducer = (state = initialState, action: ActionsType): initialStateType =>
                 ...state,
                 inicialization: true
             };
+        case "SET_LANG":
+            return {
+                ...state,
+                languageApp: action.lang
+            };
+        case "SET_UNIT_TEMP":
+            return {
+                ...state,
+                celsius: action.cels
+            };
         default:
             return state;
     }
-};
-//(0 °C × 9/5) + 32
-export const actions = {
-    setDataWeather: (data: any) => ({type: "SET_DATA_WEATHER", data} as const),
-    setMessage: (mess: string) => ({type: "SET_MESSAGE", mess} as const),
-    setUserLocal: (lat: number, lon: number, date: string) => ({
-        type: "SET_USER_LOCATION",
-        coord: {lat, lon},
-        date
-    } as const),
-    initialisation: (init: boolean) => ({type: "SET_INITIALISATION", init} as const),
 };
 
 export default reducer;

@@ -1,18 +1,14 @@
-$headerBgColor: #8290A8;
-* {
-    box-sizing: border-box;
-}
-
 .header {
-    z-index: 10;
     display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     background-color: transparent;
     padding: 15px;
+    box-sizing: border-box;
+}
 
-    .btn_group {
-        display: flex;
-    }
+@media screen and (max-width: 900px) {
 
 }

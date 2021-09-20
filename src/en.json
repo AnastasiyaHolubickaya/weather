@@ -1,0 +1,22 @@
+{
+  "en": {
+    "translation": {
+      "currently_date": "Current weather",
+      "latitude":"Latitude",
+      "longitude": "Longitude",
+      "population": "population",
+      "ms": "m/s",
+      "km": "km",
+      "mmHg": "mmHg",
+      "btn_change_bg": "Refresh",
+      "placeholder": "Enter city",
+      "btn_search": "Search",
+      "wind": "Wind",
+      "feels": "Feels like",
+      "humidity": "humidity",
+      "visibility": "visibility",
+      "pressure": "pressure",
+      "mess_novalid": "Only Latin and Cyrillic letters are allowed to be entered"
+    }
+  }
+}

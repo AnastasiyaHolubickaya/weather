@@ -1,0 +1,23 @@
+{
+  "ru": {
+    "translation": {
+      "currently_date": "Текущая погода",
+      "latitude":"Широта",
+      "longitude": "Долгота",
+      "population": "население",
+      "ms": "м/с",
+      "km": "км",
+      "mmHg": "мм рт ст",
+      "btn_change_bg": "Сменить фон",
+      "placeholder": "Введите город",
+      "btn_search": "Поиск",
+      "wind": "Ветер",
+      "feels": "Ощущается как",
+      "humidity": "влажность",
+      "visibility": "видимость",
+      "pressure": "давление",
+
+      "mess_novalid": "Разрешен ввод только букв латинского алфавита и кирилицы"
+    }
+  }
+}

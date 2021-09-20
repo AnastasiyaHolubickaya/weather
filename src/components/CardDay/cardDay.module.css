@@ -1,0 +1,31 @@
+.card{
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .7);
+
+}
+
+.img{
+    width: 50px;
+}
+.img img {
+    width: 40px;
+}
+.temp{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 20px;
+}
+.temp span{
+    font-size: 30px;
+    font-weight: bold;
+}
+.date{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 900px) {
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

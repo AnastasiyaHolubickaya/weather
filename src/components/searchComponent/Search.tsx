@@ -1,27 +1,19 @@
 import React from "react";
 import cl from "./search.module.css"
 import {Field, InjectedFormProps, reduxForm} from "redux-form";
-import Button from "../button/Button";
 import {Input} from "./FormControls";
+import i18next from "i18next";
+import {CustomizedButtons} from "../button/Button";
+
 
 
 type ownPropsType = {}
 type formDataType = {
     text: string
 }
-type validatorType = (value: string) => string | undefined
-
-
-const validateSumbol = (): validatorType => (value) => {
-    if (value !== undefined) {
-        let regex = new RegExp(/^[a-zа-яё]+$/i);
-        if (!regex.test(value)) return (`разрешен ввод только букв латинского алфавита и кирилицы`);
-    }
-    return undefined;
-};
-const validate = validateSumbol();
 
 const formSubmit: React.FC<InjectedFormProps<formDataType> & ownPropsType> = ({handleSubmit, error,}) => {
+
     return (
         <div>
             <form onSubmit={handleSubmit} className={cl.form}>
@@ -29,12 +21,16 @@ const formSubmit: React.FC<InjectedFormProps<formDataType> & ownPropsType> = ({h
                        component={Input}
                        autoFocus
                        type="text"
-                       placeholder={'enter city'}
-                       validate={[validate]}/>
+                       placeholder={i18next.t('placeholder')}
+                      />
                 {
                     !error && <div>{error}</div>
                 }
-                <Button value="search"/>
+                <CustomizedButtons
+                    value={i18next.t('btn_search')}
+                    // @ts-ignore
+                    handleOnClick={handleSubmit}
+                > </CustomizedButtons>
             </form>
         </div>
     )

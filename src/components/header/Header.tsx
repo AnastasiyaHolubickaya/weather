@@ -1,36 +1,51 @@
-import React, {Component} from "react";
+import React from "react";
 import cl from "./header.module.css"
 import {Search} from "../searchComponent/Search";
-import {AppStateType} from "../../redux/store";
-import {connect} from "react-redux";
-import {getWeather} from "../../redux/ThunksCreator";
+import ButtonGroup from '@material-ui/core/ButtonGroup';
+import {CustomizedButtons} from "../button/Button";
+import {SplitButton} from "../button/SplitButton";
+
 
 interface IMyComponentState {
-
-}
-
-type mapStatePropsType = ReturnType<typeof mapStateToProps>
-type mapDispatchPropsType = {
+    handleOnClick: any
     getWeather: any
-}
-type ownPropsType = mapDispatchPropsType & mapStatePropsType
-
-
-class Header extends Component<ownPropsType, IMyComponentState> {
-
-
-    render() {
-        return (
-            <header className={cl.header}>
-
-                <Search
-                    getWeather={this.props.getWeather}
-                />
-            </header>
-        )
-    }
+    setLanguage: (lang: string) => void
+    setUnitTemp: (cels: boolean) => void
 }
 
-const mapStateToProps = (state: AppStateType) => ({});
 
-export default connect(mapStateToProps, {getWeather})(Header);
+export const Header: React.FC<IMyComponentState> = ({handleOnClick, getWeather, setLanguage, setUnitTemp}) => {
+
+    const handleChangeUnitTmp = (cels: boolean) => {
+        setUnitTemp(cels)
+    };
+
+    return (
+        <header className={cl.header}>
+            <div>
+
+                <ButtonGroup className={cl.btn_style} size="small">
+                    <SplitButton
+                        setLanguage={setLanguage}
+                    />
+                    <CustomizedButtons
+                        handleOnClick={handleOnClick}
+                        value={"☀"}
+                    />
+
+                    <CustomizedButtons
+                        handleOnClick={() => handleChangeUnitTmp(false)}
+                        value={"°F"}
+                    />
+                    <CustomizedButtons
+                        handleOnClick={() => handleChangeUnitTmp(true)}
+                        value={"°C"}
+                    />
+                </ButtonGroup>
+            </div>
+            <Search
+                getWeather={getWeather}
+            />
+        </header>
+    )
+};

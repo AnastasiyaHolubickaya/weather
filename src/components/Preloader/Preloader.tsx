@@ -5,7 +5,7 @@ import classes from './Preloader.module.css';
 const Preloader = () => {
     return (
         <div className={classes.block}>
-            <img src="globe-9.gif" alt="preloader"/>
+           идет загрузка данных...
         </div>
     )
 };
